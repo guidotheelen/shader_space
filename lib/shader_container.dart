@@ -25,7 +25,7 @@ class _ShaderContainerState extends State<ShaderContainer> {
 
   void loadShader() async {
     var program = await FragmentProgram.fromAsset(
-      'shaders/${widget.pageNumber}.frag',
+      'shaders/9.frag',
     );
     shader = program.fragmentShader();
   }

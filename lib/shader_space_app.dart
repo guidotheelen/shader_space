@@ -9,7 +9,7 @@ class ShaderSpaceApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shader Space',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,

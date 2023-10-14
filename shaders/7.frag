@@ -1,4 +1,4 @@
-// Random noise
+// Circle composition
 
 #include <flutter/runtime_effect.glsl>
 
