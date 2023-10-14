@@ -4,17 +4,13 @@ precision mediump float;
 
 uniform vec2 uSize;
 uniform float iTime;
+uniform float intensity;
 
 out vec4 fragColor;
 
-// White background with grey horizontal lines
+// Square grid
 void main() {
-    vec2 uv = gl_FragCoord.xy / uSize;
-    vec3 lineColor = vec3(0.61);
-    vec3 backgroundColor = vec3(1.0);
+    vec2 uv = (gl_FragCoord.xy - uSize / 2.0) / uSize.y;
 
-    // use step to create the lines
-    vec3 color = mix(backgroundColor, lineColor, step(0.96, fract(uv.y * 15.0)));
-
-    fragColor = vec4(color, 1.0);
+    fragColor = vec4(0.0);
 }

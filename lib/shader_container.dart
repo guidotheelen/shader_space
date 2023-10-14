@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:shader_space/app_constants.dart';
 import 'package:shader_space/shader_painter.dart';
 
 class ShaderContainer extends StatefulWidget {
@@ -19,12 +20,12 @@ class ShaderContainer extends StatefulWidget {
 class _ShaderContainerState extends State<ShaderContainer> {
   late Timer timer;
   double delta = 0;
+  double intensity = 0.5;
   FragmentShader? shader;
 
   void loadShader() async {
     var program = await FragmentProgram.fromAsset(
-      // 'shaders/${widget.pageNumber}.frag',
-      'shaders/6.frag',
+      'shaders/${widget.pageNumber}.frag',
     );
     shader = program.fragmentShader();
   }
@@ -66,11 +67,31 @@ class _ShaderContainerState extends State<ShaderContainer> {
     if (shader == null) {
       return const Center(child: CircularProgressIndicator());
     } else {
-      return CustomPaint(
-        painter: ShaderPainter(
-          shader!,
-          delta,
-        ),
+      return Stack(
+        children: [
+          Positioned.fill(
+            child: CustomPaint(
+              painter: ShaderPainter(
+                shader!,
+                delta,
+                intensity,
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: AppConstants.spacingMedium,
+            left: AppConstants.spacingMedium,
+            right: AppConstants.spacingMedium,
+            child: Slider(
+              value: intensity,
+              onChanged: (value) {
+                setState(() {
+                  intensity = value;
+                });
+              },
+            ),
+          ),
+        ],
       );
     }
   }

@@ -4,6 +4,7 @@ precision mediump float;
 
 uniform vec2 uSize;
 uniform float iTime;
+uniform float intensity;
 
 out vec4 fragColor;
 
