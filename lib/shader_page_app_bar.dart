@@ -6,9 +6,11 @@ class ShaderPageAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ShaderPageAppBar({
     super.key,
     required this.onUpdate,
+    required this.onScreenShot,
   });
 
-  final ValueChanged? onUpdate;
+  final ValueChanged onUpdate;
+  final VoidCallback onScreenShot;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,10 @@ class ShaderPageAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       title: const Text(AppConstants.appName),
       actions: [
+        IconButton(
+          onPressed: onScreenShot,
+          icon: const Icon(Icons.photo_camera),
+        ),
         NumberSelector.plain(
           current: 1,
           min: 1,
