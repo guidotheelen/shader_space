@@ -1,3 +1,5 @@
+// Standing waves
+
 #include <flutter/runtime_effect.glsl>
 
 precision mediump float;
@@ -15,9 +17,9 @@ void main() {
     float pulse = sin(time) / 20;
 
     float cir = 0.0;
-    cir += sin(uv.x * 20.0 + time) / 2.0;
-    cir += sin(uv.y * 20.0 + time) / 2.0;
-    cir += sin(length(uv * 20.0) + time) / 2.0;
+    cir += sin(uv.x * 100.0 * intensity + time) / 2.0;
+    cir += sin(uv.y * 100.0 * intensity + time) / 2.0;
+    cir += sin(length(uv * 100.0 * intensity) + time) / 2.0;
     cir += pulse;
 
     // Output to screen

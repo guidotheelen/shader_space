@@ -1,3 +1,5 @@
+// Scalable dot
+
 #include <flutter/runtime_effect.glsl>
 
 precision mediump float;

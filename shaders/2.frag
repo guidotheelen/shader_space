@@ -1,3 +1,5 @@
+// Rainbow colors
+
 #include <flutter/runtime_effect.glsl>
 
 precision mediump float;

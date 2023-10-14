@@ -3,5 +3,5 @@ abstract class AppConstants {
 
   // Spacings
   static const spacingSmall = 20.0;
-  static const spacingMedium = 40.0;
+  static const spacingMedium = 55.0;
 }

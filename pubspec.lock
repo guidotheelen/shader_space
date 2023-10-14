@@ -107,6 +107,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  number_selector:
+    dependency: "direct main"
+    description:
+      name: number_selector
+      sha256: a154056620d671a624837d70f1fd87249f9b6d837bb04da125502d1fb2f4eff9
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.7"
   path:
     dependency: transitive
     description:
@@ -186,3 +194,4 @@ packages:
     version: "0.1.4-beta"
 sdks:
   dart: ">=3.1.0-185.0.dev <4.0.0"
+  flutter: ">=1.17.0"

@@ -1,3 +1,5 @@
+// Wiggely swirly stripes
+
 #include <flutter/runtime_effect.glsl>
 
 precision mediump float;
@@ -19,8 +21,8 @@ void main(void) {
     float p = (atan(center.y, center.x)) / (2.0 * PI);
     float numStripes = 12.0;
 
-    bool stripeA = mod(floor((p * numStripes) + (sin(dist * 10.0 + sin(iTime)))), 2.0) == 1.0;
-    bool stripeB = mod(floor((p * numStripes) - (sin(dist * 10.0 + cos(iTime)))), 2.0) == 1.0;
+    bool stripeA = mod(floor((p * numStripes) + (sin(dist * 10.0 * intensity + sin(iTime)))), 2.0) == 1.0;
+    bool stripeB = mod(floor((p * numStripes) - (sin(dist * 10.0 * intensity + cos(iTime)))), 2.0) == 1.0;
 
     vec3 col;
 

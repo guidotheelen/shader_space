@@ -17,8 +17,11 @@ class _ShaderPageState extends State<ShaderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ShaderPageAppBar(
-        onPrevious: pageNumber == 1 ? null : _decrement,
-        onNext: _increment,
+        onUpdate: (value) {
+          setState(() {
+            pageNumber = value;
+          });
+        },
       ),
       body: SizedBox(
         height: double.infinity,
@@ -28,17 +31,5 @@ class _ShaderPageState extends State<ShaderPage> {
         ),
       ),
     );
-  }
-
-  _decrement() {
-    setState(() {
-      pageNumber--;
-    });
-  }
-
-  _increment() {
-    setState(() {
-      pageNumber++;
-    });
   }
 }
